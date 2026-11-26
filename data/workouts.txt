@@ -1,0 +1,8 @@
+W001|M001|2026-11-24|Barbell Bench Press|Strength|4|8|72.5|12|326
+W002|M001|2026-11-25|Back Squat|Strength|4|6|100.0|12|324
+W003|M002|2026-11-25|Treadmill HIIT Sprints|Cardio|0|0|0.0|30|340
+W004|M003|2026-11-25|Lat Pulldown|Strength|3|12|47.5|9|259
+W005|M004|2026-11-26|Conventional Deadlift|Strength|3|5|130.0|9|257
+W006|M005|2026-11-26|Rowing Machine|Cardio|0|0|0.0|25|275
+W007|M006|2026-11-26|Overhead Barbell Press|Strength|4|8|55.0|12|259
+W008|M004|2026-11-26|Cycling Endurance|Cardio|0|0|0.0|40|410

@@ -1,0 +1,19 @@
+# Compiled Java bytecode
+out/
+*.class
+*.jar
+
+# IDE settings
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+nbproject/private/
+build/
+dist/
+
+# OS & temporary files
+.DS_Store
+Thumbs.db

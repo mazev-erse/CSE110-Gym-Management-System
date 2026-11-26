@@ -1,0 +1,3 @@
+T001|Tanvir Ahmed|01711223344|tanvir.coach@fitpulse.bd|Strength & Hypertrophy|7000.0|5
+T002|Nusrat Jahan|01822334455|nusrat.fit@fitpulse.bd|HIIT & Conditioning|6500.0|4
+T003|Rafiul Islam|01933445566|rafiul.power@fitpulse.bd|Powerlifting|7500.0|6

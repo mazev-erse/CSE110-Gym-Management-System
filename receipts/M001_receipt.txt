@@ -1,0 +1,17 @@
+====================================================
+       FITPULSE GYM & WORKOUT MANAGEMENT SYSTEM     
+             OFFICIAL MONTHLY BILL RECEIPT          
+====================================================
+Issue Date       : 2026-11-27
+Member ID        : M001
+Member Name      : Arif Rahman
+Phone / Email    : 01755667788 | arif@std.ewubd.edu
+Health Profile   : 74.5 kg | 176 cm | BMI 24.1 (Normal)
+----------------------------------------------------
+Membership Plan  : Premium            BDT  4000.00
+Personal Trainer : Tanvir Ahmed       BDT  1500.00
+----------------------------------------------------
+TOTAL MONTHLY DUE:                    BDT  5500.00
+====================================================
+Workouts Logged: 2 | Total Volume: 4720 kg | Burned: 650 kcal
+Thank you for training with FitPulse Gym!
