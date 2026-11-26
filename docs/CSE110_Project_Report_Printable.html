@@ -395,39 +395,39 @@
   <!-- WorkoutLog ..|> Persistable -->
   <path d="M 525 185 L 525 144 L 460 144 L 460 106" fill="none" stroke="#0f172a" stroke-width="1.3" stroke-dasharray="6,4" marker-end="url(#hollowTri)"/>
 
-  <!-- Member --|> Person & Trainer --|> Person -->
+  <!-- Member extends Person and Trainer extends Person -->
   <path d="M 195 425 L 195 375 L 252 375 L 252 343" fill="none" stroke="#0f172a" stroke-width="1.6" marker-end="url(#hollowTri)"/>
   <path d="M 535 445 L 535 405 L 315 405 L 315 343" fill="none" stroke="#0f172a" stroke-width="1.6" marker-end="url(#hollowTri)"/>
 
-  <!-- Member *--> WorkoutLog (Composition: 1 to 0..*) -->
+  <!-- Member owns WorkoutLog (Composition: 1 to 0..*) -->
   <path d="M 370 465 L 405 465 L 405 395 L 650 395 L 650 383" fill="none" stroke="#0f172a" stroke-width="1.5" marker-start="url(#compDiamond)" marker-end="url(#openArrow)"/>
   <text x="380" y="458" font-size="10" fill="#0f172a">1</text>
   <text x="657" y="394" font-size="10" fill="#0f172a">0..* logs</text>
 
-  <!-- Member o--> Trainer (Bidirectional Object Aggregation: 0..* to 0..1) -->
+  <!-- Member references Trainer (Bidirectional Object Aggregation: 0..* to 0..1) -->
   <line x1="370" y1="548" x2="428" y2="548" stroke="#0f172a" stroke-width="1.5" marker-start="url(#aggDiamond)" marker-end="url(#openArrow)"/>
   <text x="378" y="541" font-size="10" fill="#0f172a">0..*</text>
   <text x="405" y="564" font-size="10" fill="#0f172a">0..1</text>
 
-  <!-- Member --> MembershipPlan (Association: 0..* to 1) -->
+  <!-- Member associates with MembershipPlan (Association: 0..* to 1) -->
   <path d="M 60 425 L 60 150 L 700 150 L 700 144" fill="none" stroke="#5b21b6" stroke-width="1.3" marker-end="url(#openArrow)"/>
   <text x="68" y="416" font-size="10" fill="#5b21b6">0..*</text>
   <text x="708" y="156" font-size="10" fill="#5b21b6">1 plan</text>
 
-  <!-- GymService *--> DataRepository (Composition: 1 to 3) -->
+  <!-- GymService owns DataRepository (Composition: 1 to 3) -->
   <line x1="1005" y1="415" x2="1005" y2="178" stroke="#15803d" stroke-width="1.5" marker-start="url(#compDiamond)" marker-end="url(#openArrow)"/>
   <text x="1014" y="398" font-size="10" fill="#15803d">1</text>
   <text x="1014" y="196" font-size="10" fill="#15803d">3 repos (Member, Trainer, WorkoutLog)</text>
 
-  <!-- GymService *--> FileStorageService (Composition: 1 to 1) -->
+  <!-- GymService owns FileStorageService (Composition: 1 to 1) -->
   <path d="M 855 653 L 855 685 L 670 685 L 670 713" fill="none" stroke="#15803d" stroke-width="1.5" marker-start="url(#compDiamond)" marker-end="url(#openArrow)"/>
   <text x="678" y="704" font-size="10" fill="#15803d">1 persists via</text>
 
-  <!-- GymManagementFrame --> GymService (Association: 1 to 1) -->
+  <!-- GymManagementFrame uses GymService (Association: 1 to 1) -->
   <line x1="1000" y1="715" x2="1000" y2="655" stroke="#1e40af" stroke-width="1.5" marker-end="url(#openArrow)"/>
   <text x="1008" y="692" font-size="10" fill="#1e40af">1 uses</text>
 
-  <!-- GymService ..> gym.exception (Dependency <<throws>>) -->
+  <!-- GymService throws gym.exception (Dependency) -->
   <path d="M 815 628 L 785 628 L 785 696 L 260 696 L 260 713" fill="none" stroke="#be123c" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#openArrow)"/>
   <text x="485" y="690" font-size="10" fill="#be123c">&lt;&lt;throws&gt;&gt;</text>
 
