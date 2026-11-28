@@ -48,9 +48,9 @@
 
 ---
 
-## 5. UML 2.0 Class Diagram
+## 5. UML Diagram
 
-![UML 2.0 Class Diagram](UML_Class_Diagram.svg)
+![UML Diagram](UML_Class_Diagram.svg)
 
 ---
 
