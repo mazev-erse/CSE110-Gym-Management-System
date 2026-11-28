@@ -49,20 +49,25 @@
 
 ## Quick Start (How to Run)
 
-### Option 1: 1-Click Windows Launcher
+### Option 1: Apache NetBeans (1-Click Open Project)
+1. Open **Apache NetBeans** → **`File` → `Open Project...`**
+2. Select the `CSE110-Gym-Management-System` folder (it has a coffee-cup NetBeans project icon) → click **Open Project**.
+3. Press **`F6`** (or click the green **Run** button) to launch `gym.Main`.
+
+### Option 2: 1-Click Windows Launcher
 Double-click **`run.bat`**, or run in PowerShell / Command Prompt:
 ```bat
 .\run.bat
 ```
 
-### Option 2: Manual Terminal Compilation (Works on JDK 11–25)
+### Option 3: Manual Terminal Compilation (Works on JDK 11–25)
 ```bash
 mkdir out
 javac --release 11 -d out src/gym/*.java src/gym/model/*.java src/gym/exception/*.java src/gym/repository/*.java src/gym/service/*.java src/gym/ui/*.java
 java -cp out gym.Main
 ```
 
-### Option 3: Run Automated Verification Suite
+### Option 4: Run Automated Verification Suite
 ```bash
 java -cp out gym.GymSystemSelfTest
 ```
