@@ -1,6 +1,4 @@
-M001|Arif Rahman|01755667788|arif@std.ewubd.edu|PREMIUM|74.5|176.0|T001
-M002|Sadia Afrin|01644556677|sadia@std.ewubd.edu|STANDARD|56.0|163.0|T002
-M003|Mehedi Hasan|01566778899|mehedi@std.ewubd.edu|BASIC|79.0|172.0|NONE
-M004|Farhan Kabir|01799887766|farhan@std.ewubd.edu|PREMIUM|84.0|180.0|T001
-M005|Nabila Tasnim|01877665544|nabila@std.ewubd.edu|STANDARD|52.5|160.0|T002
-M006|Zarif Hossain|01911224466|zarif@std.ewubd.edu|PREMIUM|91.0|177.0|T003
+M001|Arif Rahman|01755667788|arif@ewubd.edu|Premium|74.5|176.0|T001
+M002|Sadia Afrin|01644556677|sadia@ewubd.edu|Standard|56.0|163.0|T002
+M003|Mehedi Hasan|01566778899|mehedi@ewubd.edu|Basic|79.0|172.0|NONE
+M004|Farhan Kabir|01799887766|farhan@ewubd.edu|Premium|84.0|180.0|T001

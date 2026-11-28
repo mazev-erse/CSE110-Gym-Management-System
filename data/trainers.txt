@@ -1,3 +1,3 @@
-T001|Tanvir Ahmed|01711223344|tanvir.coach@gymtracker.bd|Strength & Hypertrophy|7000.0|5
-T002|Nusrat Jahan|01822334455|nusrat.fit@gymtracker.bd|HIIT & Conditioning|6500.0|4
-T003|Rafiul Islam|01933445566|rafiul.power@gymtracker.bd|Powerlifting|7500.0|6
+T001|Tanvir Ahmed|01711223344|tanvir@gym.com|Strength|7000.0|5
+T002|Nusrat Jahan|01822334455|nusrat@gym.com|Cardio & HIIT|6500.0|4
+T003|Rafiul Islam|01933445566|rafiul@gym.com|Powerlifting|7500.0|6

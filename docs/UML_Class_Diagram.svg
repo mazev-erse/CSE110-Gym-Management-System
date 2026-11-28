@@ -1,305 +1,211 @@
-<svg viewBox="0 0 1180 985" width="100%" xmlns="http://www.w3.org/2000/svg"
+<svg viewBox="0 0 1100 880" width="100%" xmlns="http://www.w3.org/2000/svg"
      style="font-family: 'Segoe UI', Arial, sans-serif; background:#ffffff; border:1px solid #000000;">
   <defs>
-    <!-- Inheritance / Realization hollow triangle -->
     <marker id="hollowTri" viewBox="0 0 14 14" refX="13" refY="7" markerWidth="11" markerHeight="11" orient="auto">
       <path d="M 1 1 L 13 7 L 1 13 z" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
     </marker>
-    <!-- Open directional association arrow -->
     <marker id="openArrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="9" markerHeight="9" orient="auto">
       <path d="M 1 1 L 11 6 L 1 11" fill="none" stroke="#000000" stroke-width="1.6"/>
     </marker>
-    <!-- Composition filled diamond at start -->
     <marker id="compDiamond" viewBox="0 0 16 10" refX="1" refY="5" markerWidth="13" markerHeight="9" orient="auto">
       <path d="M 1 5 L 8 1 L 15 5 L 8 9 z" fill="#000000" stroke="#000000" stroke-width="1.2"/>
     </marker>
-    <!-- Aggregation hollow diamond at start -->
     <marker id="aggDiamond" viewBox="0 0 16 10" refX="1" refY="5" markerWidth="13" markerHeight="9" orient="auto">
       <path d="M 1 5 L 8 1 L 15 5 L 8 9 z" fill="#ffffff" stroke="#000000" stroke-width="1.4"/>
     </marker>
   </defs>
 
-  <!-- ==================== ROW 1: INTERFACES, ENUM, GENERIC REPO ==================== -->
-  <!-- Identifiable -->
-  <g transform="translate(30,20)">
-    <rect width="225" height="84" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
-    <line x1="0" y1="38" x2="225" y2="38" stroke="#000000"/>
-    <text x="112" y="16" font-size="10.5" text-anchor="middle" fill="#000000">&lt;&lt;interface&gt;&gt;</text>
-    <text x="112" y="31" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Identifiable</text>
-    <text x="10" y="55" font-size="11" fill="#000000">+ getId() : String</text>
-    <text x="10" y="72" font-size="11" fill="#000000">+ getSummary() : String</text>
+  <!-- Row 1: Identifiable Interface & DataManager Generic -->
+  <g transform="translate(220,20)">
+    <rect width="230" height="82" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+    <line x1="0" y1="36" x2="230" y2="36" stroke="#000000"/>
+    <text x="115" y="15" font-size="10.5" text-anchor="middle">&lt;&lt;interface&gt;&gt;</text>
+    <text x="115" y="30" font-size="13" font-weight="bold" text-anchor="middle">Identifiable</text>
+    <text x="10" y="53" font-size="11">+ getId() : String</text>
+    <text x="10" y="70" font-size="11">+ getSummary() : String</text>
   </g>
 
-  <!-- Persistable -->
-  <g transform="translate(295,20)">
-    <rect width="225" height="84" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
-    <line x1="0" y1="38" x2="225" y2="38" stroke="#000000"/>
-    <text x="112" y="16" font-size="10.5" text-anchor="middle" fill="#000000">&lt;&lt;interface&gt;&gt;</text>
-    <text x="112" y="31" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Persistable</text>
-    <text x="10" y="59" font-size="11" fill="#000000">+ toFileRecord() : String</text>
+  <g transform="translate(760,20)">
+    <rect width="305" height="148" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+    <line x1="0" y1="36" x2="305" y2="36" stroke="#000000"/>
+    <line x1="0" y1="74" x2="305" y2="74" stroke="#000000"/>
+    <text x="152" y="15" font-size="10.5" text-anchor="middle">&lt;&lt;generic class&gt;&gt;</text>
+    <text x="152" y="30" font-size="12.5" font-weight="bold" text-anchor="middle">DataManager&lt;T extends Identifiable&gt;</text>
+    <text x="10" y="52" font-size="11">- list : ArrayList&lt;T&gt;</text>
+    <text x="10" y="67" font-size="11">- map : HashMap&lt;String, T&gt;</text>
+    <text x="10" y="91" font-size="11">+ add(item : T) : void</text>
+    <text x="10" y="106" font-size="11">+ findById(id : String) : T</text>
+    <text x="10" y="121" font-size="11">+ remove(id : String) : void</text>
+    <text x="10" y="136" font-size="11">+ getAll() : ArrayList&lt;T&gt;</text>
   </g>
 
-  <!-- MembershipPlan -->
-  <g transform="translate(560,20)">
-    <rect width="250" height="122" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
-    <line x1="0" y1="38" x2="250" y2="38" stroke="#000000"/>
-    <line x1="0" y1="90" x2="250" y2="90" stroke="#000000"/>
-    <text x="125" y="16" font-size="10.5" text-anchor="middle" fill="#000000">&lt;&lt;enumeration&gt;&gt;</text>
-    <text x="125" y="31" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">MembershipPlan</text>
-    <text x="10" y="54" font-size="11" fill="#000000">BASIC, STANDARD, PREMIUM</text>
-    <text x="10" y="69" font-size="11" fill="#000000">- displayName : String</text>
-    <text x="10" y="83" font-size="11" fill="#000000">- monthlyFee : double</text>
-    <text x="10" y="108" font-size="11" fill="#000000">+ getMonthlyFee() : double</text>
+  <!-- Row 2: Abstract Person & WorkoutLog -->
+  <g transform="translate(110,150)">
+    <rect width="305" height="165" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+    <line x1="0" y1="36" x2="305" y2="36" stroke="#000000"/>
+    <line x1="0" y1="100" x2="305" y2="100" stroke="#000000"/>
+    <text x="152" y="15" font-size="10.5" text-anchor="middle">&lt;&lt;abstract&gt;&gt;</text>
+    <text x="152" y="30" font-size="13.5" font-weight="bold" font-style="italic" text-anchor="middle">Person</text>
+    <text x="10" y="52" font-size="11">- id : String</text>
+    <text x="10" y="66" font-size="11">- name : String</text>
+    <text x="10" y="80" font-size="11">- phone : String</text>
+    <text x="10" y="94" font-size="11">- email : String</text>
+    <text x="10" y="117" font-size="11" font-style="italic">+ getRole() : String {abstract}</text>
+    <text x="10" y="133" font-size="11" font-style="italic">+ calculateMonthlyAmount() : double</text>
+    <text x="10" y="149" font-size="11">+ getSummary() : String</text>
   </g>
 
-  <!-- Generic DataRepository<T extends Identifiable> -->
-  <g transform="translate(860,20)">
-    <rect width="290" height="156" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
-    <line x1="0" y1="38" x2="290" y2="38" stroke="#000000"/>
-    <line x1="0" y1="62" x2="290" y2="62" stroke="#000000"/>
-    <text x="145" y="16" font-size="10.5" text-anchor="middle" fill="#000000">&lt;&lt;generic class&gt;&gt;</text>
-    <text x="145" y="31" font-size="12" font-weight="bold" text-anchor="middle" fill="#000000">DataRepository&lt;T extends Identifiable&gt;</text>
-    <text x="10" y="54" font-size="11" fill="#000000">- storage : Map&lt;String, T&gt;</text>
-    <text x="10" y="79" font-size="11" fill="#000000">+ add(item : T) : void</text>
-    <text x="10" y="95" font-size="11" fill="#000000">+ update(item : T) : void</text>
-    <text x="10" y="111" font-size="11" fill="#000000">+ remove(id : String) : void</text>
-    <text x="10" y="127" font-size="11" fill="#000000">+ findById(id : String) : T</text>
-    <text x="10" y="143" font-size="11" fill="#000000">+ getAll() : List&lt;T&gt;</text>
+  <g transform="translate(465,165)">
+    <rect width="265" height="175" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+    <line x1="0" y1="28" x2="265" y2="28" stroke="#000000"/>
+    <line x1="0" y1="104" x2="265" y2="104" stroke="#000000"/>
+    <text x="132" y="19" font-size="13" font-weight="bold" text-anchor="middle">WorkoutLog</text>
+    <text x="10" y="44" font-size="10.5">- logId, memberId, date : String</text>
+    <text x="10" y="59" font-size="10.5">- exerciseName, type : String</text>
+    <text x="10" y="74" font-size="10.5">- sets, reps, durationMinutes : int</text>
+    <text x="10" y="89" font-size="10.5">- weightKg : double | - caloriesBurned : int</text>
+    <text x="10" y="121" font-size="10.5">+ WorkoutLog(...Strength...) [Overloaded]</text>
+    <text x="10" y="136" font-size="10.5">+ WorkoutLog(...Cardio...) [Overloaded]</text>
+    <text x="10" y="151" font-size="10.5">+ getTotalVolume() : double</text>
+    <text x="10" y="166" font-size="10.5">+ toFileLine() : String</text>
   </g>
 
-  <!-- ==================== ROW 2: ABSTRACT PERSON & WORKOUTLOG ==================== -->
-  <!-- Abstract Person -->
-  <g transform="translate(95,165)">
-    <rect width="315" height="176" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
-    <line x1="0" y1="38" x2="315" y2="38" stroke="#000000"/>
-    <line x1="0" y1="106" x2="315" y2="106" stroke="#000000"/>
-    <text x="157" y="16" font-size="10.5" text-anchor="middle" fill="#000000">&lt;&lt;abstract&gt;&gt;</text>
-    <text x="157" y="31" font-size="13.5" font-weight="bold" font-style="italic" text-anchor="middle" fill="#000000">Person</text>
-    <text x="10" y="54" font-size="11" fill="#000000">- id : String</text>
-    <text x="10" y="69" font-size="11" fill="#000000">- name : String</text>
-    <text x="10" y="84" font-size="11" fill="#000000">- phone : String</text>
-    <text x="10" y="99" font-size="11" fill="#000000">- email : String</text>
-    <text x="10" y="122" font-size="11" font-style="italic" fill="#000000">+ getRole() : String {abstract}</text>
-    <text x="10" y="138" font-size="11" font-style="italic" fill="#000000">+ calculateMonthlyAmount() : double {abstract}</text>
-    <text x="10" y="154" font-size="11" fill="#000000">+ getSummary() : String</text>
-    <text x="10" y="169" font-size="11" fill="#000000">+ getId() / getName() / setName(...) : ...</text>
-  </g>
-
-  <!-- WorkoutLog -->
-  <g transform="translate(470,185)">
-    <rect width="340" height="196" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
-    <line x1="0" y1="28" x2="340" y2="28" stroke="#000000"/>
-    <line x1="0" y1="114" x2="340" y2="114" stroke="#000000"/>
-    <text x="170" y="19" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">WorkoutLog</text>
-    <text x="10" y="45" font-size="10.5" fill="#000000">- logId : String   |   - memberId : String</text>
-    <text x="10" y="60" font-size="10.5" fill="#000000">- date : String   |   - exerciseName : String</text>
-    <text x="10" y="75" font-size="10.5" fill="#000000">- category : String   |   - weightUsedKg : double</text>
-    <text x="10" y="90" font-size="10.5" fill="#000000">- sets : int   |   - reps : int</text>
-    <text x="10" y="105" font-size="10.5" fill="#000000">- durationMinutes : int   |   - caloriesBurned : int</text>
-    <text x="10" y="131" font-size="10.5" fill="#000000">+ WorkoutLog(..., sets, reps, kg) [Overloaded]</text>
-    <text x="10" y="146" font-size="10.5" fill="#000000">+ WorkoutLog(..., mins, kcal) [Overloaded]</text>
-    <text x="10" y="161" font-size="10.5" fill="#000000">+ calculateVolumeKg() : double</text>
-    <text x="10" y="176" font-size="10.5" fill="#000000">+ getSummary() : String</text>
-    <text x="10" y="190" font-size="10.5" fill="#000000">+ toFileRecord() : String</text>
-  </g>
-
-  <!-- ==================== ROW 3: MEMBER, TRAINER, GYMSERVICE ==================== -->
-  <!-- Member -->
-  <g transform="translate(25,425)">
-    <rect width="345" height="240" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
-    <line x1="0" y1="28" x2="345" y2="28" stroke="#000000"/>
-    <line x1="0" y1="112" x2="345" y2="112" stroke="#000000"/>
-    <text x="172" y="19" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#000000">Member</text>
-    <text x="10" y="44" font-size="11" fill="#000000">- plan : MembershipPlan</text>
-    <text x="10" y="59" font-size="11" fill="#000000">- weightKg : double   |   - heightCm : double</text>
-    <text x="10" y="74" font-size="11" fill="#000000">- assignedTrainer : Trainer</text>
-    <text x="10" y="89" font-size="11" fill="#000000">- workoutLogs : List&lt;WorkoutLog&gt;</text>
-    <text x="10" y="104" font-size="10.5" text-decoration="underline" fill="#000000">+ PERSONAL_TRAINER_FEE : double = 1500.0</text>
-    <text x="10" y="128" font-size="10.5" fill="#000000">+ calculateBMI() : double</text>
-    <text x="10" y="143" font-size="10.5" fill="#000000">+ getBmiCategory() : String</text>
-    <text x="10" y="158" font-size="10.5" fill="#000000">+ logWorkout(log : WorkoutLog) : void</text>
-    <text x="10" y="173" font-size="10.5" fill="#000000">+ logWorkout(..., sets, reps, kg) : WorkoutLog</text>
-    <text x="10" y="188" font-size="10.5" fill="#000000">+ logWorkout(..., mins, kcal) : WorkoutLog</text>
-    <text x="10" y="203" font-size="10.5" fill="#000000">+ generateReceiptText() : String</text>
-    <text x="10" y="218" font-size="10.5" fill="#000000">+ getRole() : String  /  + calculateMonthlyAmount() : double</text>
-    <text x="10" y="232" font-size="10.5" fill="#000000">+ toFileRecord() : String</text>
-  </g>
-
-  <!-- Trainer -->
-  <g transform="translate(430,445)">
-    <rect width="320" height="205" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
-    <line x1="0" y1="28" x2="320" y2="28" stroke="#000000"/>
-    <line x1="0" y1="112" x2="320" y2="112" stroke="#000000"/>
-    <text x="160" y="19" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#000000">Trainer</text>
-    <text x="10" y="44" font-size="11" fill="#000000">- specialty : String</text>
-    <text x="10" y="59" font-size="11" fill="#000000">- baseSalary : double</text>
-    <text x="10" y="74" font-size="11" fill="#000000">- experienceYears : int</text>
-    <text x="10" y="89" font-size="11" fill="#000000">- assignedMembers : List&lt;Member&gt;</text>
-    <text x="10" y="104" font-size="10.5" text-decoration="underline" fill="#000000">+ COMMISSION_PER_TRAINEE : double = 750.0</text>
-    <text x="10" y="128" font-size="10.5" fill="#000000">+ addAssignedMember(member : Member) : void</text>
-    <text x="10" y="144" font-size="10.5" fill="#000000">+ getAssignedMembers() : List&lt;Member&gt;</text>
-    <text x="10" y="160" font-size="10.5" fill="#000000">+ getRole() : String</text>
-    <text x="10" y="176" font-size="10.5" fill="#000000">+ calculateMonthlyAmount() : double</text>
-    <text x="10" y="192" font-size="10.5" fill="#000000">+ toFileRecord() : String</text>
-  </g>
-
-  <!-- GymService -->
-  <g transform="translate(815,415)">
-    <rect width="335" height="238" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+  <!-- Row 3: Member, Trainer, FileHandler -->
+  <g transform="translate(25,385)">
+    <rect width="335" height="218" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
     <line x1="0" y1="28" x2="335" y2="28" stroke="#000000"/>
-    <line x1="0" y1="100" x2="335" y2="100" stroke="#000000"/>
-    <text x="167" y="19" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#000000">GymService</text>
-    <text x="10" y="44" font-size="10.5" fill="#000000">- memberRepo : DataRepository&lt;Member&gt;</text>
-    <text x="10" y="59" font-size="10.5" fill="#000000">- trainerRepo : DataRepository&lt;Trainer&gt;</text>
-    <text x="10" y="74" font-size="10.5" fill="#000000">- workoutRepo : DataRepository&lt;WorkoutLog&gt;</text>
-    <text x="10" y="89" font-size="10.5" fill="#000000">- storageService : FileStorageService</text>
-    <text x="10" y="117" font-size="10.5" fill="#000000">+ initialize() : void  /  + saveToDisk() : void</text>
-    <text x="10" y="133" font-size="10.5" fill="#000000">+ addMember(...) / + updateMember(...) : void</text>
-    <text x="10" y="149" font-size="10.5" fill="#000000">+ addTrainer(...) / + deleteTrainer(id) : void</text>
-    <text x="10" y="165" font-size="10.5" fill="#000000">+ logWorkout(...) : WorkoutLog [Overloaded]</text>
-    <text x="10" y="181" font-size="10.5" fill="#000000">+ exportMemberReceipt(id : String) : File</text>
-    <text x="10" y="197" font-size="10.5" fill="#000000">+ getAllPeoplePolymorphic() : List&lt;Person&gt;</text>
-    <text x="10" y="213" font-size="10.5" fill="#000000">+ calculateTotalMonthlyRevenue() : double</text>
-    <text x="10" y="229" font-size="10.5" fill="#000000">+ calculateTotalTrainerPayroll() : double</text>
+    <line x1="0" y1="104" x2="335" y2="104" stroke="#000000"/>
+    <text x="167" y="19" font-size="13.5" font-weight="bold" text-anchor="middle">Member</text>
+    <text x="10" y="44" font-size="11">- plan : String</text>
+    <text x="10" y="59" font-size="11">- weightKg : double | - heightCm : double</text>
+    <text x="10" y="74" font-size="11">- assignedTrainer : Trainer</text>
+    <text x="10" y="89" font-size="11">- workouts : ArrayList&lt;WorkoutLog&gt;</text>
+    <text x="10" y="120" font-size="10.5">+ calculateBMI() : double</text>
+    <text x="10" y="135" font-size="10.5">+ addWorkout(log : WorkoutLog) : void</text>
+    <text x="10" y="150" font-size="10.5">+ addWorkout(..., sets, reps, kg) : WorkoutLog</text>
+    <text x="10" y="165" font-size="10.5">+ addWorkout(..., mins, kcal) : WorkoutLog</text>
+    <text x="10" y="180" font-size="10.5">+ getRole() : String</text>
+    <text x="10" y="195" font-size="10.5">+ calculateMonthlyAmount() : double</text>
+    <text x="10" y="210" font-size="10.5">+ toFileLine() : String</text>
   </g>
 
-  <!-- ==================== ROW 4: EXCEPTIONS, FILE I/O, SWING GUI ==================== -->
-  <!-- Custom Exception Package -->
-  <g transform="translate(25,720)">
-    <rect width="465" height="200" fill="#ffffff" stroke="#000000" stroke-width="1.4"/>
-    <text x="12" y="19" font-size="11.5" font-weight="bold" fill="#000000">Package: gym.exception (&lt;&lt;checked exceptions&gt;&gt;)</text>
-    <line x1="0" y1="27" x2="465" y2="27" stroke="#000000"/>
-
-    <!-- java.lang.Exception -->
-    <rect x="148" y="40" width="170" height="32" fill="#ffffff" stroke="#000000" stroke-width="1.3"/>
-    <text x="233" y="61" font-size="12" font-weight="bold" text-anchor="middle" fill="#000000">java.lang.Exception</text>
-
-    <!-- 4 Subclasses -->
-    <rect x="12" y="114" width="106" height="68" fill="#ffffff" stroke="#000000" stroke-width="1.3"/>
-    <text x="65" y="131" font-size="9.5" text-anchor="middle" fill="#000000">&lt;&lt;exception&gt;&gt;</text>
-    <text x="65" y="148" font-size="10" font-weight="bold" text-anchor="middle" fill="#000000">DuplicateEntity</text>
-    <text x="65" y="162" font-size="10" font-weight="bold" text-anchor="middle" fill="#000000">Exception</text>
-
-    <rect x="124" y="114" width="106" height="68" fill="#ffffff" stroke="#000000" stroke-width="1.3"/>
-    <text x="177" y="131" font-size="9.5" text-anchor="middle" fill="#000000">&lt;&lt;exception&gt;&gt;</text>
-    <text x="177" y="148" font-size="10" font-weight="bold" text-anchor="middle" fill="#000000">EntityNotFound</text>
-    <text x="177" y="162" font-size="10" font-weight="bold" text-anchor="middle" fill="#000000">Exception</text>
-
-    <rect x="236" y="114" width="104" height="68" fill="#ffffff" stroke="#000000" stroke-width="1.3"/>
-    <text x="288" y="131" font-size="9.5" text-anchor="middle" fill="#000000">&lt;&lt;exception&gt;&gt;</text>
-    <text x="288" y="148" font-size="10" font-weight="bold" text-anchor="middle" fill="#000000">InvalidInput</text>
-    <text x="288" y="162" font-size="10" font-weight="bold" text-anchor="middle" fill="#000000">Exception</text>
-
-    <rect x="346" y="114" width="106" height="68" fill="#ffffff" stroke="#000000" stroke-width="1.3"/>
-    <text x="399" y="131" font-size="9.5" text-anchor="middle" fill="#000000">&lt;&lt;exception&gt;&gt;</text>
-    <text x="399" y="148" font-size="10" font-weight="bold" text-anchor="middle" fill="#000000">DataStorage</text>
-    <text x="399" y="162" font-size="10" font-weight="bold" text-anchor="middle" fill="#000000">Exception</text>
-
-    <!-- Inheritance bus lines to Exception -->
-    <path d="M 65 114 L 65 93 L 399 93 L 399 114" fill="none" stroke="#000000" stroke-width="1.3"/>
-    <line x1="177" y1="114" x2="177" y2="93" stroke="#000000" stroke-width="1.3"/>
-    <line x1="288" y1="114" x2="288" y2="93" stroke="#000000" stroke-width="1.3"/>
-    <line x1="233" y1="93" x2="233" y2="73" stroke="#000000" stroke-width="1.4" marker-end="url(#hollowTri)"/>
+  <g transform="translate(415,400)">
+    <rect width="295" height="190" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+    <line x1="0" y1="28" x2="295" y2="28" stroke="#000000"/>
+    <line x1="0" y1="98" x2="295" y2="98" stroke="#000000"/>
+    <text x="147" y="19" font-size="13.5" font-weight="bold" text-anchor="middle">Trainer</text>
+    <text x="10" y="44" font-size="11">- specialty : String</text>
+    <text x="10" y="59" font-size="11">- baseSalary : double</text>
+    <text x="10" y="74" font-size="11">- experienceYears : int</text>
+    <text x="10" y="89" font-size="11">- assignedMembers : ArrayList&lt;Member&gt;</text>
+    <text x="10" y="116" font-size="10.5">+ addAssignedMember(m : Member) : void</text>
+    <text x="10" y="132" font-size="10.5">+ getRole() : String</text>
+    <text x="10" y="148" font-size="10.5">+ calculateMonthlyAmount() : double</text>
+    <text x="10" y="164" font-size="10.5">+ getSummary() : String</text>
+    <text x="10" y="180" font-size="10.5">+ toFileLine() : String</text>
   </g>
 
-  <!-- FileStorageService -->
-  <g transform="translate(520,720)">
-    <rect width="300" height="200" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <g transform="translate(765,245)">
+    <rect width="300" height="145" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
     <line x1="0" y1="28" x2="300" y2="28" stroke="#000000"/>
-    <line x1="0" y1="90" x2="300" y2="90" stroke="#000000"/>
-    <text x="150" y="19" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">FileStorageService</text>
-    <text x="10" y="45" font-size="10.5" fill="#000000">- dataDir : File   |   - receiptsDir : File</text>
-    <text x="10" y="61" font-size="10.5" fill="#000000">- membersFile : File   |   - trainersFile : File</text>
-    <text x="10" y="77" font-size="10.5" fill="#000000">- workoutsFile : File</text>
-    <text x="10" y="108" font-size="10.5" fill="#000000">+ saveAll(members, trainers, workouts) : void</text>
-    <text x="10" y="124" font-size="10.5" fill="#000000">+ loadTrainers() : List&lt;Trainer&gt;</text>
-    <text x="10" y="140" font-size="10.5" fill="#000000">+ loadMembers(trainers) : List&lt;Member&gt;</text>
-    <text x="10" y="156" font-size="10.5" fill="#000000">+ loadWorkouts() : List&lt;WorkoutLog&gt;</text>
-    <text x="10" y="172" font-size="10.5" fill="#000000">+ exportMemberReceipt(m : Member) : File</text>
+    <line x1="0" y1="88" x2="300" y2="88" stroke="#000000"/>
+    <text x="150" y="19" font-size="13" font-weight="bold" text-anchor="middle">FileHandler</text>
+    <text x="10" y="45" font-size="10.5">- dataFolder : File</text>
+    <text x="10" y="61" font-size="10.5">- membersFile, trainersFile : File</text>
+    <text x="10" y="77" font-size="10.5">- workoutsFile : File</text>
+    <text x="10" y="106" font-size="10.5">+ saveAll(trainers, members, workouts) : void</text>
+    <text x="10" y="124" font-size="10.5">+ loadAll(trainers, members, workouts) : void</text>
   </g>
 
-  <!-- GymManagementFrame -->
-  <g transform="translate(850,720)">
-    <rect width="300" height="200" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
-    <line x1="0" y1="38" x2="300" y2="38" stroke="#000000"/>
-    <line x1="0" y1="108" x2="300" y2="108" stroke="#000000"/>
-    <text x="150" y="16" font-size="10.5" text-anchor="middle" fill="#000000">&lt;&lt;extends JFrame&gt;&gt;</text>
-    <text x="150" y="31" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">GymManagementFrame</text>
-    <text x="10" y="54" font-size="10.5" fill="#000000">- gymService : GymService</text>
-    <text x="10" y="70" font-size="10.5" fill="#000000">- barChart : FinancialBarChart</text>
-    <text x="10" y="86" font-size="10.5" fill="#000000">- donutChart : PlanDonutChart</text>
-    <text x="10" y="101" font-size="10.5" fill="#000000">- pageLayout : CardLayout</text>
-    <text x="10" y="126" font-size="10.5" fill="#000000">+ navigateTo(pageKey : String) : void</text>
-    <text x="10" y="142" font-size="10.5" fill="#000000">+ refreshAllViews() : void</text>
-    <text x="10" y="158" font-size="10.5" fill="#000000">- buildDashboardPage() / buildMembersPage()</text>
-    <text x="10" y="174" font-size="10.5" fill="#000000">- buildWorkoutsPage() / buildOopLabPage()</text>
+  <!-- Row 4: Exceptions & GymGUI -->
+  <g transform="translate(25,650)">
+    <rect width="450" height="168" fill="#ffffff" stroke="#000000" stroke-width="1.4"/>
+    <text x="12" y="18" font-size="11.5" font-weight="bold">Custom Exceptions (extends java.lang.Exception)</text>
+    <line x1="0" y1="26" x2="450" y2="26" stroke="#000000"/>
+
+    <rect x="140" y="38" width="170" height="30" fill="#ffffff" stroke="#000000" stroke-width="1.3"/>
+    <text x="225" y="58" font-size="12" font-weight="bold" text-anchor="middle">java.lang.Exception</text>
+
+    <rect x="16" y="102" width="130" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.3"/>
+    <text x="81" y="121" font-size="9.5" text-anchor="middle">&lt;&lt;exception&gt;&gt;</text>
+    <text x="81" y="139" font-size="10.5" font-weight="bold" text-anchor="middle">DuplicateIdException</text>
+
+    <rect x="160" y="102" width="130" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.3"/>
+    <text x="225" y="121" font-size="9.5" text-anchor="middle">&lt;&lt;exception&gt;&gt;</text>
+    <text x="225" y="139" font-size="10.5" font-weight="bold" text-anchor="middle">NotFoundException</text>
+
+    <rect x="304" y="102" width="130" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.3"/>
+    <text x="369" y="121" font-size="9.5" text-anchor="middle">&lt;&lt;exception&gt;&gt;</text>
+    <text x="369" y="139" font-size="10.5" font-weight="bold" text-anchor="middle">InvalidDataException</text>
+
+    <path d="M 81 102 L 81 84 L 369 84 L 369 102" fill="none" stroke="#000000" stroke-width="1.3"/>
+    <line x1="225" y1="102" x2="225" y2="69" stroke="#000000" stroke-width="1.4" marker-end="url(#hollowTri)"/>
   </g>
 
-  <!-- ==================== CLEAN ORTHOGONAL UML 2.0 CONNECTORS ==================== -->
+  <g transform="translate(560,645)">
+    <rect width="505" height="173" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+    <line x1="0" y1="36" x2="505" y2="36" stroke="#000000"/>
+    <line x1="0" y1="104" x2="505" y2="104" stroke="#000000"/>
+    <text x="252" y="15" font-size="10.5" text-anchor="middle">&lt;&lt;extends JFrame&gt;&gt;</text>
+    <text x="252" y="30" font-size="13" font-weight="bold" text-anchor="middle">GymGUI (Swing Interface)</text>
+    <text x="10" y="53" font-size="10.5">- memberManager : DataManager&lt;Member&gt;</text>
+    <text x="10" y="69" font-size="10.5">- trainerManager : DataManager&lt;Trainer&gt;</text>
+    <text x="10" y="85" font-size="10.5">- workoutManager : DataManager&lt;WorkoutLog&gt;   |   - fileHandler : FileHandler</text>
+    <text x="10" y="122" font-size="10.5">+ createMembersTab() / createTrainersTab() / createWorkoutsTab() / createSummaryTab()</text>
+    <text x="10" y="139" font-size="10.5">+ addMemberAction() / addTrainerAction() / logWorkoutAction()</text>
+    <text x="10" y="156" font-size="10.5">+ refreshAllTables() / refreshSummaryTab()</text>
+  </g>
+
+  <!-- ==================== CLEAN CONNECTORS ==================== -->
   <!-- Person implements Identifiable -->
-  <path d="M 165 165 L 165 106" fill="none" stroke="#000000" stroke-width="1.4" stroke-dasharray="6,4" marker-end="url(#hollowTri)"/>
-  <!-- Person implements Persistable -->
-  <path d="M 350 165 L 350 106" fill="none" stroke="#000000" stroke-width="1.4" stroke-dasharray="6,4" marker-end="url(#hollowTri)"/>
-
+  <path d="M 285 150 L 285 104" fill="none" stroke="#000000" stroke-width="1.4" stroke-dasharray="6,4" marker-end="url(#hollowTri)"/>
   <!-- WorkoutLog implements Identifiable -->
-  <path d="M 505 185 L 505 132 L 210 132 L 210 106" fill="none" stroke="#000000" stroke-width="1.3" stroke-dasharray="6,4" marker-end="url(#hollowTri)"/>
-  <!-- WorkoutLog implements Persistable -->
-  <path d="M 525 185 L 525 144 L 460 144 L 460 106" fill="none" stroke="#000000" stroke-width="1.3" stroke-dasharray="6,4" marker-end="url(#hollowTri)"/>
+  <path d="M 550 165 L 550 124 L 380 124 L 380 104" fill="none" stroke="#000000" stroke-width="1.3" stroke-dasharray="6,4" marker-end="url(#hollowTri)"/>
 
-  <!-- Member extends Person and Trainer extends Person -->
-  <path d="M 195 425 L 195 375 L 252 375 L 252 343" fill="none" stroke="#000000" stroke-width="1.6" marker-end="url(#hollowTri)"/>
-  <path d="M 535 445 L 535 405 L 315 405 L 315 343" fill="none" stroke="#000000" stroke-width="1.6" marker-end="url(#hollowTri)"/>
+  <!-- Member and Trainer extend Person -->
+  <path d="M 190 385 L 190 345 L 245 345 L 245 317" fill="none" stroke="#000000" stroke-width="1.6" marker-end="url(#hollowTri)"/>
+  <path d="M 510 400 L 510 365 L 305 365 L 305 317" fill="none" stroke="#000000" stroke-width="1.6" marker-end="url(#hollowTri)"/>
 
-  <!-- Member owns WorkoutLog (Composition: 1 to 0..*) -->
-  <path d="M 370 465 L 405 465 L 405 395 L 650 395 L 650 383" fill="none" stroke="#000000" stroke-width="1.5" marker-start="url(#compDiamond)" marker-end="url(#openArrow)"/>
-  <text x="380" y="458" font-size="10" fill="#000000">1</text>
-  <text x="657" y="394" font-size="10" fill="#000000">0..* logs</text>
+  <!-- Member owns WorkoutLog (Composition) -->
+  <path d="M 360 425 L 392 425 L 392 355 L 595 355 L 595 342" fill="none" stroke="#000000" stroke-width="1.5" marker-start="url(#compDiamond)" marker-end="url(#openArrow)"/>
+  <text x="370" y="418" font-size="10">1</text>
+  <text x="603" y="352" font-size="10">0..* logs</text>
 
-  <!-- Member references Trainer (Bidirectional Object Aggregation: 0..* to 0..1) -->
-  <line x1="370" y1="548" x2="428" y2="548" stroke="#000000" stroke-width="1.5" marker-start="url(#aggDiamond)" marker-end="url(#openArrow)"/>
-  <text x="378" y="541" font-size="10" fill="#000000">0..*</text>
-  <text x="405" y="564" font-size="10" fill="#000000">0..1</text>
+  <!-- Member references Trainer (Aggregation) -->
+  <line x1="360" y1="498" x2="413" y2="498" stroke="#000000" stroke-width="1.5" marker-start="url(#aggDiamond)" marker-end="url(#openArrow)"/>
+  <text x="368" y="491" font-size="10">0..*</text>
+  <text x="392" y="514" font-size="10">0..1</text>
 
-  <!-- Member associates with MembershipPlan (Association: 0..* to 1) -->
-  <path d="M 60 425 L 60 150 L 700 150 L 700 144" fill="none" stroke="#000000" stroke-width="1.3" marker-end="url(#openArrow)"/>
-  <text x="68" y="416" font-size="10" fill="#000000">0..*</text>
-  <text x="708" y="156" font-size="10" fill="#000000">1 plan</text>
+  <!-- GymGUI uses FileHandler -->
+  <line x1="915" y1="645" x2="915" y2="392" stroke="#000000" stroke-width="1.5" marker-start="url(#compDiamond)" marker-end="url(#openArrow)"/>
+  <text x="923" y="520" font-size="10">1 fileHandler</text>
 
-  <!-- GymService owns DataRepository (Composition: 1 to 3) -->
-  <line x1="1005" y1="415" x2="1005" y2="178" stroke="#000000" stroke-width="1.5" marker-start="url(#compDiamond)" marker-end="url(#openArrow)"/>
-  <text x="1014" y="398" font-size="10" fill="#000000">1</text>
-  <text x="1012" y="196" font-size="10" fill="#000000">3 (Member, Trainer, Log)</text>
+  <!-- GymGUI uses DataManager -->
+  <path d="M 1030 645 L 1030 430 L 1082 430 L 1082 110 L 1067 110" fill="none" stroke="#000000" stroke-width="1.4" marker-start="url(#compDiamond)" marker-end="url(#openArrow)"/>
+  <text x="1038" y="422" font-size="10">3 repos</text>
 
-  <!-- GymService owns FileStorageService (Composition: 1 to 1) -->
-  <path d="M 855 653 L 855 680 L 670 680 L 670 718" fill="none" stroke="#000000" stroke-width="1.5" marker-start="url(#compDiamond)" marker-end="url(#openArrow)"/>
-  <text x="680" y="674" font-size="10" fill="#000000">1 persists via</text>
+  <!-- GymGUI catches Custom Exceptions -->
+  <line x1="560" y1="735" x2="477" y2="735" stroke="#000000" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#openArrow)"/>
+  <text x="488" y="728" font-size="10">&lt;&lt;handles&gt;&gt;</text>
 
-  <!-- GymManagementFrame uses GymService (Association: 1 to 1) -->
-  <line x1="1000" y1="720" x2="1000" y2="655" stroke="#000000" stroke-width="1.5" marker-end="url(#openArrow)"/>
-  <text x="1008" y="694" font-size="10" fill="#000000">1 uses</text>
+  <!-- UML Legend -->
+  <g transform="translate(25,834)">
+    <rect width="1040" height="32" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+    <text x="12" y="20" font-size="11" font-weight="bold">UML Legend:</text>
 
-  <!-- GymService throws gym.exception (Dependency) -->
-  <path d="M 815 628 L 785 628 L 785 698 L 260 698 L 260 718" fill="none" stroke="#000000" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#openArrow)"/>
-  <text x="485" y="692" font-size="10" fill="#000000">&lt;&lt;throws&gt;&gt;</text>
+    <line x1="108" y1="16" x2="150" y2="16" stroke="#000000" stroke-width="1.5" marker-end="url(#hollowTri)"/>
+    <text x="158" y="20" font-size="11">Inheritance</text>
 
-  <!-- ==================== UML 2.0 LEGEND ==================== -->
-  <g transform="translate(25,938)">
-    <rect width="1125" height="34" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
-    <text x="14" y="21" font-size="11" font-weight="bold" fill="#000000">UML Legend:</text>
+    <line x1="252" y1="16" x2="294" y2="16" stroke="#000000" stroke-width="1.4" stroke-dasharray="5,3" marker-end="url(#hollowTri)"/>
+    <text x="302" y="20" font-size="11">Realization (implements)</text>
 
-    <line x1="130" y1="17" x2="175" y2="17" stroke="#000000" stroke-width="1.5" marker-end="url(#hollowTri)"/>
-    <text x="184" y="21" font-size="11" fill="#000000">Inheritance (extends)</text>
+    <line x1="468" y1="16" x2="514" y2="16" stroke="#000000" stroke-width="1.5" marker-start="url(#compDiamond)" marker-end="url(#openArrow)"/>
+    <text x="522" y="20" font-size="11">Composition (owns)</text>
 
-    <line x1="330" y1="17" x2="375" y2="17" stroke="#000000" stroke-width="1.4" stroke-dasharray="5,3" marker-end="url(#hollowTri)"/>
-    <text x="384" y="21" font-size="11" fill="#000000">Realization (implements)</text>
+    <line x1="658" y1="16" x2="704" y2="16" stroke="#000000" stroke-width="1.5" marker-start="url(#aggDiamond)" marker-end="url(#openArrow)"/>
+    <text x="712" y="20" font-size="11">Aggregation (has-a)</text>
 
-    <line x1="548" y1="17" x2="598" y2="17" stroke="#000000" stroke-width="1.5" marker-start="url(#compDiamond)" marker-end="url(#openArrow)"/>
-    <text x="607" y="21" font-size="11" fill="#000000">Composition (owns)</text>
-
-    <line x1="742" y1="17" x2="792" y2="17" stroke="#000000" stroke-width="1.5" marker-start="url(#aggDiamond)" marker-end="url(#openArrow)"/>
-    <text x="801" y="21" font-size="11" fill="#000000">Aggregation (has-a)</text>
-
-    <line x1="935" y1="17" x2="980" y2="17" stroke="#000000" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#openArrow)"/>
-    <text x="989" y="21" font-size="11" fill="#000000">Dependency (&lt;&lt;throws&gt;&gt;)</text>
+    <line x1="848" y1="16" x2="890" y2="16" stroke="#000000" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#openArrow)"/>
+    <text x="898" y="20" font-size="11">Dependency / Handles</text>
   </g>
 </svg>

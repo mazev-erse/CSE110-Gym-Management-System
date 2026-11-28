@@ -1,13 +1,7 @@
-package gym.model;
+package gym;
 
-/**
- * Abstract base class representing a person associated with the gym.
- * Demonstrates:
- * - Abstract Class (Rubric Criterion 2)
- * - Encapsulation via private fields + getters/setters (Requirement 1)
- * - Interface implementation (Identifiable, Persistable)
- */
-public abstract class Person implements Identifiable, Persistable {
+// Abstract base class for people in the gym (Member and Trainer).
+public abstract class Person implements Identifiable {
     private String id;
     private String name;
     private String phone;
@@ -20,7 +14,6 @@ public abstract class Person implements Identifiable, Persistable {
         this.email = email;
     }
 
-    // Encapsulated Getters and Setters
     @Override
     public String getId() {
         return id;
@@ -54,20 +47,12 @@ public abstract class Person implements Identifiable, Persistable {
         this.email = email;
     }
 
-    /**
-     * Abstract method overridden by subclasses (Member, Trainer) to return their role.
-     */
+    // Abstract methods overridden by Member and Trainer (Polymorphism)
     public abstract String getRole();
-
-    /**
-     * Polymorphic calculation:
-     * - For a Member: returns monthly membership bill (+ trainer fee if assigned).
-     * - For a Trainer: returns monthly salary (+ bonus per assigned member).
-     */
     public abstract double calculateMonthlyAmount();
 
     @Override
     public String getSummary() {
-        return String.format("[%s] %s (%s) - Phone: %s", getRole(), name, id, phone);
+        return "[" + getRole() + "] " + name + " (" + id + ") | Phone: " + phone;
     }
 }
