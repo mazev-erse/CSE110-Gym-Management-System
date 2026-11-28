@@ -304,13 +304,13 @@ public final class ModernComponents {
     }
 
     /**
-     * Brand header painted with a crisp custom Java2D dumbbell + heartbeat mark.
+     * Brand header painted with a crisp gradient icon tile and geometric barbell emblem.
      */
     public static class BrandLogoPanel extends JPanel {
         public BrandLogoPanel() {
             setOpaque(false);
-            setPreferredSize(new Dimension(220, 74));
-            setMaximumSize(new Dimension(Integer.MAX_VALUE, 74));
+            setPreferredSize(new Dimension(230, 78));
+            setMaximumSize(new Dimension(Integer.MAX_VALUE, 78));
         }
 
         @Override
@@ -320,25 +320,50 @@ public final class ModernComponents {
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
-            // Gradient icon tile
-            g2.setColor(Theme.PRIMARY);
-            g2.fill(new RoundRectangle2D.Double(18, 16, 40, 40, 12, 12));
+            int bx = 18;
+            int by = 17;
+            int size = 42;
 
-            // Pulse line inside logo tile
+            // Subtle outer glow
+            g2.setColor(new Color(59, 130, 246, 45));
+            g2.fill(new RoundRectangle2D.Double(bx - 2, by - 2, size + 4, size + 4, 14, 14));
+
+            // Gradient app icon tile (Royal Blue -> Deep Indigo)
+            g2.setPaint(new java.awt.GradientPaint(
+                    bx, by, new Color(59, 130, 246),
+                    bx + size, by + size, new Color(79, 70, 229)));
+            g2.fill(new RoundRectangle2D.Double(bx, by, size, size, 12, 12));
+
+            // Subtle glass inner highlight border
+            g2.setColor(new Color(255, 255, 255, 60));
+            g2.setStroke(new BasicStroke(1.1f));
+            g2.draw(new RoundRectangle2D.Double(bx + 0.6, by + 0.6, size - 1.2, size - 1.2, 11.5, 11.5));
+
+            // Geometric precision barbell emblem centered inside tile
+            int cx = bx + size / 2;
+            int cy = by + size / 2;
             g2.setColor(Color.WHITE);
-            g2.setStroke(new BasicStroke(2.4f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
-            int[] xs = {24, 31, 35, 41, 45, 52};
-            int[] ys = {37, 37, 26, 46, 33, 37};
-            g2.drawPolyline(xs, ys, xs.length);
+
+            // Outer weight plates
+            g2.fill(new RoundRectangle2D.Double(cx - 14, cy - 6, 3.6, 12, 2, 2));
+            g2.fill(new RoundRectangle2D.Double(cx + 10.4, cy - 6, 3.6, 12, 2, 2));
+
+            // Inner heavy weight plates
+            g2.fill(new RoundRectangle2D.Double(cx - 9.5, cy - 9.5, 4.2, 19, 2.5, 2.5));
+            g2.fill(new RoundRectangle2D.Double(cx + 5.3, cy - 9.5, 4.2, 19, 2.5, 2.5));
+
+            // Center bar
+            g2.setStroke(new BasicStroke(2.8f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+            g2.drawLine(cx - 5, cy, cx + 5, cy);
 
             // Brand Name & Subtitle
-            g2.setFont(Theme.FONT_BRAND);
+            g2.setFont(new Font("Segoe UI", Font.BOLD, 17));
             g2.setColor(Color.WHITE);
-            g2.drawString("FitPulse Pro", 68, 35);
+            g2.drawString("Gym Tracker", 70, 36);
 
             g2.setFont(Theme.FONT_SMALL);
             g2.setColor(Theme.TEXT_MUTED);
-            g2.drawString("CSE110 Gym Manager", 68, 51);
+            g2.drawString("Workout & Club Manager", 70, 52);
             g2.dispose();
         }
     }

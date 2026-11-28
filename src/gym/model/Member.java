@@ -152,7 +152,7 @@ public class Member extends Person {
     public String generateReceiptText() {
         StringBuilder sb = new StringBuilder();
         sb.append("====================================================\n");
-        sb.append("       FITPULSE GYM & WORKOUT MANAGEMENT SYSTEM     \n");
+        sb.append("      GYM TRACKER — WORKOUT & CLUB MANAGEMENT       \n");
         sb.append("             OFFICIAL MONTHLY BILL RECEIPT          \n");
         sb.append("====================================================\n");
         sb.append(String.format("Issue Date       : %s%n", LocalDate.now()));
@@ -175,7 +175,7 @@ public class Member extends Person {
         sb.append("====================================================\n");
         sb.append(String.format("Workouts Logged: %d | Total Volume: %.0f kg | Burned: %d kcal%n",
                 workoutLogs.size(), getTotalVolumeKg(), getTotalCaloriesBurned()));
-        sb.append("Thank you for training with FitPulse Gym!\n");
+        sb.append("Thank you for training with Gym Tracker!\n");
         return sb.toString();
     }
 

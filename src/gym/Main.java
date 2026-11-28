@@ -11,7 +11,7 @@ import javax.swing.UIManager;
 import java.io.File;
 
 /**
- * Application entry point for FitPulse Pro — Gym & Workout Management System.
+ * Application entry point for Gym Tracker — Workout & Club Management System.
  * Course: CSE110 (Object Oriented Programming) — East West University.
  */
 public class Main {

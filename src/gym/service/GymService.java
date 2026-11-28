@@ -432,11 +432,11 @@ public class GymService {
 
     private void seedSampleData() {
         try {
-            addTrainer("T001", "Tanvir Ahmed", "01711223344", "tanvir.coach@fitpulse.bd",
+            addTrainer("T001", "Tanvir Ahmed", "01711223344", "tanvir.coach@gymtracker.bd",
                     "Strength & Hypertrophy", 7000, 5);
-            addTrainer("T002", "Nusrat Jahan", "01822334455", "nusrat.fit@fitpulse.bd",
+            addTrainer("T002", "Nusrat Jahan", "01822334455", "nusrat.fit@gymtracker.bd",
                     "HIIT & Conditioning", 6500, 4);
-            addTrainer("T003", "Rafiul Islam", "01933445566", "rafiul.power@fitpulse.bd",
+            addTrainer("T003", "Rafiul Islam", "01933445566", "rafiul.power@gymtracker.bd",
                     "Powerlifting", 7500, 6);
 
             addMember("M001", "Arif Rahman", "01755667788", "arif@std.ewubd.edu",

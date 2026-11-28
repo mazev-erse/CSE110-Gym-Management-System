@@ -110,7 +110,7 @@ public class GymManagementFrame extends JFrame {
 
     public GymManagementFrame(GymService gymService) {
         this.gymService = gymService;
-        setTitle("FitPulse Pro — Gym & Workout Management System (CSE110 OOP)");
+        setTitle("Gym Tracker — Workout & Club Management System (CSE110 OOP)");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1280, 790);
         setMinimumSize(new Dimension(1120, 700));

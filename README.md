@@ -1,4 +1,4 @@
-# FitPulse Pro — Gym & Workout Management System
+# Gym Tracker — Workout & Club Management System
 
 ![Java](https://img.shields.io/badge/Java-11%2B-ED8B00?logo=openjdk&logoColor=white)
 ![GUI](https://img.shields.io/badge/GUI-Java%20Swing%20%2B%20Java2D-2563EB)
@@ -9,7 +9,7 @@
 **Course:** CSE110 (Object Oriented Programming)  
 **Course Instructor:** Fouzia Risdin, Lecturer, CSE
 
-FitPulse Pro is a pure Java desktop application (zero external JAR dependencies) demonstrating textbook **Object-Oriented Programming** through an executive-style **Java Swing + Java2D** gym management dashboard, live financial analytics, BMI health tracking, printable billing receipts, and text-file persistence.
+**Gym Tracker** is a pure Java desktop application (zero external JAR dependencies) demonstrating textbook **Object-Oriented Programming** through an executive-style **Java Swing + Java2D** gym management dashboard, live financial analytics, BMI health tracking, printable billing receipts, and text-file persistence.
 
 ---
 
@@ -33,7 +33,7 @@ FitPulse Pro is a pure Java desktop application (zero external JAR dependencies)
 
 ## OOP & CSE110 Rubric Coverage (5 / 5 Marks)
 
-| Requirement / Rubric Criterion | Implementation in FitPulse Pro |
+| Requirement / Rubric Criterion | Implementation in Gym Tracker |
 | :--- | :--- |
 | **Classes, Objects & Encapsulation** | 19 modular classes/interfaces/enums across 5 packages (`gym.model`, `gym.exception`, `gym.repository`, `gym.service`, `gym.ui`); all domain fields are `private` with public getters & setters. |
 | **Abstract Class & Inheritance** | `abstract class Person` defines common attributes and abstract methods (`getRole()`, `calculateMonthlyAmount()`), extended by `Member` and `Trainer`. |

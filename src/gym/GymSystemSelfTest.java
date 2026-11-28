@@ -26,7 +26,7 @@ import java.util.List;
  */
 public class GymSystemSelfTest {
     public static void main(String[] args) throws Exception {
-        System.out.println("=== CSE110 FitPulse Pro Verification Suite ===");
+        System.out.println("=== CSE110 Gym Tracker Verification Suite ===");
 
         // Start cleanly from seeded sample data to ensure latest schema
         File dataDir = new File("data");
